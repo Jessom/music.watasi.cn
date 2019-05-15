@@ -1,0 +1,36 @@
+.menu-bar-box { height: 41px; }
+.menu-bar {
+  position: fixed !important;
+  top: $menuHeight;
+  width: calc(100% - 240px);
+  border-bottom: 0 !important;
+  z-index: 9;
+  &::after {
+    display: block !important;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #eee;
+  }
+  &.el-menu--horizontal > .el-menu-item {
+    color: $text;
+    height: $menuHeight;
+    line-height: $menuHeight;
+    padding: 0;
+    margin-right: 20px;
+    &.is-active {
+      color: $theme !important;
+      border-bottom-color: $theme;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    &:not(.is-disabled):hover {
+      color: $text;
+      font-weight: bold;
+    }
+  }
+
+}

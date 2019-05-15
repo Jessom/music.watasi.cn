@@ -1,0 +1,25 @@
+.topbar-con {
+  -webkit-app-region: drag;
+  height: $topbarHeight;
+  width: calc(100% - 220px);
+  color: #000;
+  font-size: 12px;
+  line-height: $topbarHeight;
+  position: fixed;
+  right: 0;
+  z-index: 100;
+  padding: 0 20px 0 0;
+  background-color: #fff;
+  @include horizontal(space-between, true);
+
+  .handle-bar {
+    -webkit-app-region: no-drag;
+  }
+
+  .topbar-left {
+    .iconfont {
+      font-size: 14px;
+      margin: 0 5px;
+    }
+  }
+}

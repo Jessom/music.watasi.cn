@@ -1,0 +1,41 @@
+/* 上图下字 */
+.tibt {
+  margin-bottom: 30px;
+  .img-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    .iconfont.icon-rili,
+    .time {
+      position: absolute;
+      color: #fff;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+    .iconfont.icon-rili {
+      font-size: 80px;
+    }
+    .time {
+      font-size: 28px;
+      top: 60%;
+    }
+    .look-wrap {
+      position: absolute;
+      right: 7px;
+      top: 3px;
+      font-size: 13px;
+      color: #fff;
+      .iconfont {
+        font-size: 11px;
+      }
+    }
+  }
+  .txt {
+    font-size: 14px;
+    color: $text;
+    margin: 0;
+    margin-top: 5px;
+    line-height: 1.4;
+  }
+}

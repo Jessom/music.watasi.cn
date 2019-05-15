@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+@mixin flex {
+  display: flex;
+}
+
+// 左右布局
+@mixin row {
+  @include flex;
+  flex-direction: row;
+}
+
+// 上下布局
+@mixin column {
+  @include flex;
+  flex-direction: column;
+}
+
+// 水平垂直居中
+@mixin center {
+  @include row;
+  justify-content: center;
+  align-items: center;
+}
+
+// 水平方向
+@mixin horizontal($position: center, $items: false) {
+  @include row;
+  justify-content: $position;
+  @if $items {
+    align-items: center;
+  }
+}
+
+// 垂直方向
+@mixin vertical($position: center) {
+  @include column();
+  align-items: $position;
+}
+
+// 神略好
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

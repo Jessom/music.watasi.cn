@@ -1,0 +1,49 @@
+.aside-bar {
+  height: 100vh;
+  border-right: 1px solid $asideBorderColor;
+  overflow: hidden;
+  // flex: 0 0 $asideWidth;
+  width: $asideWidth;
+  padding-top: $topbarHeight;
+
+  /* 用户头像 */
+  .aside-avatar {
+    padding: 0 10px 15px 10px;
+    @include horizontal(flex-start, true);
+    .avatar {
+      width: $avatarSize;
+      height: $avatarSize;
+      border-radius: 50%;
+    }
+
+    .txt {
+      margin-left: 10px;
+    }
+  }
+
+  /* 菜单列表 */
+  .aside-menubar {
+    height: calc(100% - 115px);
+    overflow-y: scroll;
+    border-right: 0;
+    .menu-title {
+      color: $subText;
+      padding: 15px 16px 5px;
+      font-size: 12px;
+    }
+  }
+  .el-menu-item {
+    height: $menuHeight;
+    line-height: $menuHeight;
+    i { color: $subText; }
+    &.is-active {
+      border-left: 4px solid $theme;
+      color: $theme;
+      background-color: lighten($theme, 47);
+      padding-left: 16px !important;
+    }
+    &:hover {
+      background-color: lighten($theme, 47);
+    }
+  }
+}
