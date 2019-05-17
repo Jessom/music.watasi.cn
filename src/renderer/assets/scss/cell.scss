@@ -1,0 +1,81 @@
+.cell-container {
+
+}
+
+/* 图文cell */
+$small: 60px;
+$big: 90px;
+.cell-container__blend {
+  @include horizontal(space-between, true);
+  flex-wrap: wrap;
+  .blend_cell {
+    width: 47%;
+    padding: 10px 2px;
+    position: relative;
+    @include horizontal(flex-start, true);
+    .blend-img {
+      width: $small;
+      height: $small;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid #f3f3f3;
+    }
+    .blend-body {
+      width: calc(100% - 60px);
+      padding-left: 10px;
+      line-height: 1.5;
+      .title {
+        font-size: 15px;
+
+        @include ellipsis;
+      }
+      .desc {
+        font-size: 13px;
+        color: $subText;
+      }
+
+      &.blend-index {
+        @include horizontal(flex-start, true);
+        .index {
+          font-size: 12px;
+          color: $subText;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #f6f6f6;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+  }
+}
+
+.cell-container.cell-container__vertical {
+  flex-direction: column;
+  .blend_cell {
+    width: 100%;
+  }
+}
+
+.cell-container.cell-container__bigimg {
+  .blend_cell .blend-img {
+    width: $big;
+    height: $big;
+  }
+  .blend_cell .blend-body {
+    width: calc(100% - 100px);
+  }
+}

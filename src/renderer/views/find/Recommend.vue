@@ -47,6 +47,41 @@
         </el-col>
       </el-row>
     </div>
+
+    <div class="block-wrap">
+      <item-bar title='最新音乐' />
+      <blend-cell :list='list3' :showIndex='true' />
+    </div>
+
+    <div class="block-wrap">
+      <item-bar title='推荐MV' />
+      <el-row :gutter="20" type="flex" style="flex-wrap: wrap;">
+        <el-col
+          :span="6"
+          class="tibt"
+          v-for='item in list4'
+          :key='item.id'>
+          <div class="img-box">
+            <img :src="item.img" :alt="item.title">
+            <div class="look-wrap">
+              <i class="iconfont icon-bofang1"></i>
+              <span class="look">{{ item.look }}</span>
+            </div>
+          </div>
+          <p class="txt">{{ item.title }}</p>
+          <p class="desc">
+            <span
+              v-for='(it, ind) in item.artists'
+              :key='it.id'>{{ it.name }}<span v-if='ind+1 != item.artists.length'> / </span></span>
+          </p>
+        </el-col>
+      </el-row>
+    </div>
+
+    <div class="block-wrap">
+      <item-bar title='主播电台' />
+      <blend-cell :list='list5' :bigImg='true' />
+    </div>
   </div>
 </template>
 
@@ -132,6 +167,149 @@ export default {
           id: 4,
           img: 'https://sowebsite.oss-cn-shanghai.aliyuncs.com/files/2017/12/1101514287208_.pic_hd.jpg',
           title: 'AMANI'
+        }
+      ],
+      list3: [
+        {
+          id: 1,
+          title: '孤单心事',
+          image: 'http://p4.music.126.net/0KCMOKHHbimwfdVvPPBpTA==/109951164034526943.jpg?param=100y100',
+          desc: '颜人中'
+        },
+        {
+          id: 2,
+          title: '末日青春：补完计划',
+          image: 'http://p4.music.126.net/RHILskW6QjAMpIAFiGm5Qg==/109951164032165872.jpg?param=100y100',
+          desc: 'F.I.R.'
+        },
+        {
+          id: 3,
+          title: 'You Know I Know (Live In ShangHai)',
+          image: 'http://p3.music.126.net/D4YTVFEHWqE8pVuMwd3BfQ==/109951164063718819.jpg?param=100y100',
+          desc: 'Olly Murs'
+        },
+        {
+          id: 4,
+          title: 'Paint the Clouds',
+          image: 'http://p4.music.126.net/Ldrg9ScUmVfwLPimRtqWjw==/109951164006741865.jpg?param=100y100',
+          desc: 'Far East Movement / 袁娅维'
+        },
+        {
+          id: 5,
+          title: 'Pokémon Detective Pikachu (Original Motion Picture Soundtrack)',
+          image: 'http://p3.music.126.net/xfKg1MRoALfg-StryciSQg==/109951164031502759.jpg?param=100y100',
+          desc: 'Henry Jackman'
+        },
+        {
+          id: 6,
+          title: '路过人间',
+          image: 'http://p4.music.126.net/Otu98pBAFmTF1oZtpclyCA==/109951164053279186.jpg?param=100y100',
+          desc: '郁可唯'
+        },
+        {
+          id: 7,
+          title: 'I Don\'t Care',
+          image: 'http://p3.music.126.net/jBpXM2nlImE7GF7AgBkktQ==/109951164063410613.jpg?param=100y100',
+          desc: 'Ed Sheeran / Justin Bieber'
+        },
+        {
+          id: 8,
+          title: 'MARIA',
+          image: 'http://p3.music.126.net/oH8it_bheo-odQObkaIIhw==/109951164073730138.jpg?param=100y100',
+          desc: '黄明昊 (Justin) / KOHH'
+        },
+        {
+          id: 9,
+          title: 'ME! (feat. Brendon Urie of Panic! At The Disco)',
+          image: 'http://p3.music.126.net/ARDzEUlZ8g9rEdrLKoeIMg==/109951164025958391.jpg?param=100y100',
+          desc: 'Taylor Swift / Brendon Urie'
+        },
+        {
+          id: 10,
+          title: 'Dream Visit',
+          image: 'http://p4.music.126.net/abJdL1HMhjPn926-IyxzWQ==/109951164033936763.jpg?param=100y100',
+          desc: '李易峰'
+        }
+      ],
+      list4: [
+        {
+          id: 1,
+          title: 'Tough Love',
+          img: 'https://p2.music.126.net/Zpj0SvhP5NT7j49ow47RlQ==/109951164074393472.jpg',
+          look: '70173',
+          artists: [
+            { id: 45236, name: 'Avicii' },
+            { id: 46524, name: 'Agnes' },
+            { id: 12279249, name: 'Vargas & Lagola' }
+          ]
+        },
+        {
+          id: 2,
+          title: 'Larger Than Life (Millennium 20 Edition)',
+          img: 'https://p2.music.126.net/x3ErdZ7gOlxwqiezyuPhFQ==/109951164073616233.jpg',
+          look: '970',
+          artists: [
+            { id: 88148, name: 'Backstreet Boys' }
+          ]
+        },
+        {
+          id: 3,
+          title: '不礼貌的祝福',
+          img: 'https://p2.music.126.net/BLmwsQcn-uYeCRP6sOXqxQ==/109951164075592480.jpg',
+          look: '5222',
+          artists: [
+            { id: 28183064, name: '剑仙' }
+          ]
+        },
+        {
+          id: 4,
+          title: '1st Shot (Cypher 2019)',
+          img: 'https://p2.music.126.net/KsHBvoVTr38-WHagvep41g==/109951164073360183.jpg',
+          look: '2351',
+          artists: [
+            { id: 30004947, name: '红孩儿唱片' },
+            { id: 1158046, name: 'A-Mac' },
+            { id: 12570417, name: 'e&m' },
+            { id: 29026679, name: 'TheFEEX凯撒' }
+          ]
+        }
+      ],
+      list5: [
+        {
+          id: 1,
+          title: '孤单心事',
+          image: 'http://p4.music.126.net/0KCMOKHHbimwfdVvPPBpTA==/109951164034526943.jpg?param=100y100',
+          desc: '颜人中'
+        },
+        {
+          id: 2,
+          title: '末日青春：补完计划',
+          image: 'http://p4.music.126.net/RHILskW6QjAMpIAFiGm5Qg==/109951164032165872.jpg?param=100y100',
+          desc: 'F.I.R.'
+        },
+        {
+          id: 3,
+          title: 'You Know I Know (Live In ShangHai)',
+          image: 'http://p3.music.126.net/D4YTVFEHWqE8pVuMwd3BfQ==/109951164063718819.jpg?param=100y100',
+          desc: 'Olly Murs'
+        },
+        {
+          id: 4,
+          title: 'Paint the Clouds',
+          image: 'http://p4.music.126.net/Ldrg9ScUmVfwLPimRtqWjw==/109951164006741865.jpg?param=100y100',
+          desc: 'Far East Movement / 袁娅维'
+        },
+        {
+          id: 5,
+          title: 'Pokémon Detective Pikachu (Original Motion Picture Soundtrack)',
+          image: 'http://p3.music.126.net/xfKg1MRoALfg-StryciSQg==/109951164031502759.jpg?param=100y100',
+          desc: 'Henry Jackman'
+        },
+        {
+          id: 6,
+          title: '路过人间',
+          image: 'http://p4.music.126.net/Otu98pBAFmTF1oZtpclyCA==/109951164053279186.jpg?param=100y100',
+          desc: '郁可唯'
         }
       ]
     }
