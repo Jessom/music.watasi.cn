@@ -8,6 +8,7 @@ import store from './store'
 import ItemBar from '@/components/bar/ItemBar.vue'
 import MeunBar from '@/components/bar/MenuBar.vue'
 import BlendCell from '@/components/cell/BlendCell.vue'
+import ToolBar from '@/components/bar/ToolBar.vue'
 import './assets/scss/index.scss'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -15,6 +16,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.component(ItemBar.name, ItemBar)
 Vue.component(MeunBar.name, MeunBar)
 Vue.component(BlendCell.name, BlendCell)
+Vue.component(ToolBar.name, ToolBar)
 Vue.use(ElementUI)
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios

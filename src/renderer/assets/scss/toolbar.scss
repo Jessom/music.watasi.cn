@@ -1,0 +1,31 @@
+.tool-bar-wrap {
+  @include horizontal(space-between, true);
+  padding: 20px 0;
+  font-size: 13px;
+
+  .tool-bar_bor {
+    padding: 4px 10px;
+    border-radius: 23px;
+    border: 1px solid #ccc;
+    .iconfont {
+      font-size: 12px;
+    }
+  }
+
+  .tool-bar-mens {
+    .tool-bar-menu-item {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 17px;
+      color: lighten($text, 10);
+      &.actived {
+        color: $theme;
+        background-color: lighten($theme, 47);
+        font-weight: 400;
+      }
+      &:hover {
+        color: $text;
+      }
+    }
+  }
+}

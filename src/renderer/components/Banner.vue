@@ -1,20 +1,14 @@
 <template>
   <div id="banner-wrapper">
     <swiper :options="swiperOption">
-      <swiper-slide>
-        <img src="http://p1.music.126.net/HXeBq6cOabZ_fTBuCd80BQ==/109951164072233614.jpg" alt="">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="http://p1.music.126.net/L8V3uVejBPq0-sayNgDMYA==/109951164072238305.jpg" alt="">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="http://p1.music.126.net/yYt2NIFerGKv1NIgsd8isA==/109951164072244366.jpg" alt="">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="http://p1.music.126.net/XbN-tSPIaf2JcX96ws0hvQ==/109951164072268283.jpg" alt="">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="http://p1.music.126.net/fygLzHckcOJ_jt36hLcBfw==/109951164071196452.jpg" alt="">
+      <swiper-slide
+        v-for='item in banners'
+        :key='item.targetId'>
+        <img
+          :src="item.imageUrl" alt="">
+        <span
+          class="banner-tag"
+          :class='item.titleColor'>{{ item.typeTitle }}</span>
       </swiper-slide>
       <!-- <div class="swiper-pagination" slot="pagination"></div> -->
       <div class="swiper-button-prev iconfont icon-left2" slot="button-prev"></div>
@@ -57,6 +51,16 @@ export default {
       }
     }
   },
+
+  props: {
+    banners: {
+      type: Array,
+      default () {
+        return []
+      }
+    }
+  },
+
   components: {
     swiper,
     swiperSlide
@@ -83,6 +87,21 @@ export default {
     img {
       width: 100%;
       border-radius: 8px;
+    }
+    .banner-tag {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: 12px;
+      color: #fff;
+      padding: 2px 7px;
+      border-radius: 3px 0 0 0;
+      &.red {
+        background: #dd4641;
+      }
+      &.blue {
+        background: #549bd0;
+      }
     }
   }
   .swiper-button-prev,

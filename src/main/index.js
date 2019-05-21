@@ -2,7 +2,7 @@
 
 import { app, BrowserWindow, Menu, dialog } from 'electron'
 import pkg from '../../package.json'
-import '../renderer/store'
+import '../renderer/store/index.js'
 
 /**
  * Set `__static` path to static files in production
