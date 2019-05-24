@@ -15,3 +15,22 @@ yarn run dev
 
 yarn run build
 ```
+
+## router
+```bash
+┌─ /
+├  ├─ find        # 发现音乐
+├  ├   ├─ recommend   # 个性推荐
+├  ├   ├─ songs       # 歌单
+├  ├   ├─ radio       # 主播电台
+├  ├   ├─ ranking     # 排行榜
+├  ├   ├─ singer      # 歌手
+├  ├   └─ new         # 最新音乐
+├  ├─ fm          # 私人FM
+├  ├─ video       # 视频
+├  ├─ friend      # 朋友
+├  ├─ download    # 下载管理
+├  ├─ cloud       # 音乐云盘
+├  └─ radio       # 我的电台
+└─ /lyrics		# 歌词
+```

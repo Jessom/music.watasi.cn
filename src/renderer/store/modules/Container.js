@@ -7,14 +7,12 @@ const state = {
 
 const mutations = {
   [types.SET_ANIMATION] (state, payload) {
-    console.log(payload)
     state.animation = payload
   }
 }
 
 const actions = {
   [types.SET_ANIMATION] ({ commit }, payload) {
-    console.log(payload)
     commit(types.SET_ANIMATION, payload)
   }
 }

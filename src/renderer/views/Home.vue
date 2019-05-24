@@ -1,7 +1,10 @@
 <template>
   <main class="home-container">
     <aside-bar class="aside-bar-container" />
-    <router-view class="main-container"></router-view>
+    <keep-alive>
+      <router-view v-if='$route.meta.keepAlive' class="main-container"></router-view>
+    </keep-alive>
+    <router-view v-if='!$route.meta.keepAlive' class="main-container"></router-view>
   </main>
 </template>
 

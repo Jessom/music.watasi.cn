@@ -9,6 +9,9 @@ const router = new Router({
       path: '/',
       name: 'music',
       redirect: { name: 'recommend' },
+      meta: {
+        keepAlive: true
+      },
       component: require('@/views/Home.vue').default,
       children: [
         /**
@@ -17,6 +20,9 @@ const router = new Router({
         {
           path: 'find',
           name: 'find',
+          meta: {
+            keepAlive: true
+          },
           component: require('@/views/find/Index.vue').default,
           children: [
             /**
@@ -25,6 +31,9 @@ const router = new Router({
             {
               path: 'recommend',
               name: 'recommend',
+              meta: {
+                keepAlive: true
+              },
               component: require('@/views/find/Recommend.vue').default
             },
             /**
@@ -33,6 +42,9 @@ const router = new Router({
             {
               path: 'songs',
               name: 'songs',
+              meta: {
+                keepAlive: true
+              },
               component: require('@/views/find/Songs.vue').default
             },
             /**
@@ -41,6 +53,9 @@ const router = new Router({
             {
               path: 'radio',
               name: 'radio',
+              meta: {
+                keepAlive: true
+              },
               component: require('@/views/find/Radio.vue').default
             },
             /**
@@ -49,6 +64,9 @@ const router = new Router({
             {
               path: 'ranking',
               name: 'ranking',
+              meta: {
+                keepAlive: true
+              },
               component: require('@/views/find/Ranking.vue').default
             },
             /**
@@ -57,6 +75,9 @@ const router = new Router({
             {
               path: 'singer',
               name: 'singer',
+              meta: {
+                keepAlive: true
+              },
               component: require('@/views/find/Singer.vue').default
             },
             /**
@@ -65,6 +86,9 @@ const router = new Router({
             {
               path: 'new',
               name: 'new-find',
+              meta: {
+                keepAlive: true
+              },
               component: require('@/views/find/New.vue').default
             }
           ]
@@ -76,6 +100,9 @@ const router = new Router({
         {
           path: 'fm',
           name: 'fm',
+          meta: {
+            keepAlive: true
+          },
           component: require('@/views/fm/Index.vue').default
         },
 
@@ -237,10 +264,5 @@ const router = new Router({
     }
   ]
 })
-
-/* router.beforeEach((to, from, next) => {
-  console.log(to, from)
-  next()
-}) */
 
 export default router

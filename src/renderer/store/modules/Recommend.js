@@ -1,5 +1,6 @@
 import * as types from './types'
 import { get } from '../api'
+import { filterNumber } from '../util'
 
 const state = {
   // 推荐轮播图
@@ -80,9 +81,21 @@ const actions = {
 }
 
 const getters = {
+  // 截取推荐歌单
   [types.GET_SONGS] (state) {
-    const list = JSON.parse(JSON.stringify(state.songs))
-    return list.splice(0, 9)
+    const list = JSON.parse(JSON.stringify(state.songs)).splice(0, 9)
+    return list.map(c => {
+      return {
+        ...c,
+        playCount: filterNumber(c.playCount)
+      }
+    })
+  },
+
+  // 对banner进行筛选
+  [types.GET_BANNER] (state) {
+    const list = JSON.parse(JSON.stringify(state.banner))
+    return list.filter(c => c.targetId !== 0)
   }
 }
 
